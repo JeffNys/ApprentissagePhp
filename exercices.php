@@ -18,7 +18,8 @@
         <h1>Les exercices</h1>
         <h2>les exercices en php</h2>
         <ol>
-            <li>premier exo</li>
+            <li>premier exercice: si vous voyez ce site, c'est que c'est fait</li>
+            <li><a href="/exo2.php">exercice 2</a>: décoder des chaines de caractère</li>
         </ol>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
