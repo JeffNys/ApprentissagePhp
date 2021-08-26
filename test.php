@@ -18,7 +18,27 @@
         <h1>Page de test Php</h1>
 
         <pre>
-            <?php echo "php tests"; ?>
+résultats php
+==============================================
+
+
+
+
+
+<?php
+
+
+
+
+
+?>
+
+
+
+
+
+
+==============================================
         </pre>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
