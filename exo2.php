@@ -68,9 +68,12 @@
         ?>
 
         <p>résultats:</p>
-        <p>message1: <?php echo $decodedMessage1 ?><br>
+        <!-- <p>message1: <?php echo $decodedMessage1 ?><br>
             message2: <?php echo $decodedMessage2 ?><br>
-            message3: <?php echo $decodedMessage3 ?><br>
+            message3: <?php echo $decodedMessage3 ?><br>-->
+        message 1 : <?php echo $message1; ?><br>
+        message 2 : <?php echo $message2; ?><br>
+        message 3 : <?php echo $message3; ?><br>
         </p>
 
     </div>

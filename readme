@@ -1,0 +1,9 @@
+penser à installer dploy
+    -> dply installer
+
+pour installer dploy
+    -> sudo npm install -g dploy
+    -> dploy install
+
+pour relancer le deploiement
+    -> dploy
