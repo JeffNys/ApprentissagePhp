@@ -35,7 +35,12 @@
         <p>retirer les 3 intrus: et afficher les valeurs</p>
         <p>résultat:
             <?php
-            // TO DO
+            // delete the 5th element
+            array_splice($tab1, 4, 1);
+            // delete the first element
+            array_shift($tab1);
+            // delete the last element
+            array_pop($tab1);
             ?>
         <ul>
             <li><?php echo $tab1[0]; ?></li>
