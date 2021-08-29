@@ -27,9 +27,11 @@ résultats php
 
 <?php
 
+$tab = ["1", "2", "3", "4", "5"];
 
+array_splice($tab, 2, 1);
 
-
+var_dump($tab);
 
 ?>
 
