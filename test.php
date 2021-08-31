@@ -26,14 +26,26 @@ résultats php
 
 
 <?php
+// create a vigenere tab
+$alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+$alphabetTab = str_split($alphabet);
+$doubleAlphaTab = array_merge($alphabetTab, $alphabetTab);
 
-$tab = ["1", "2", "3", "4", "5"];
+$sizeAlphabet = count($alphabetTab);
 
-array_splice($tab, 2, 1);
+for ($i = 0; $i < $sizeAlphabet; $i++) {
+    for ($j = 0; $j < $sizeAlphabet; $j++) {
+        $line = $alphabetTab[$i];
+        $column = $alphabetTab[$j];
+        $vigenere[$line][$column] = $doubleAlphaTab[$i + $j];
+    }
+}
 
-var_dump($tab);
+var_dump($vigenere);
 
 ?>
+
+
 
 
 
