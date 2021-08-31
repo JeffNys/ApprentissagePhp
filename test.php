@@ -26,14 +26,71 @@ résultats php
 
 
 <?php
+// create a vigenere tab
+$alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+$alphabetTab = str_split($alphabet);
+$doubleAlphaTab = array_merge($alphabetTab, $alphabetTab);
 
-$tab = ["1", "2", "3", "4", "5"];
+$sizeAlphabet = count($alphabetTab);
 
-array_splice($tab, 2, 1);
+for ($i = 0; $i < $sizeAlphabet; $i++) {
+    for ($j = 0; $j < $sizeAlphabet; $j++) {
+        $line = $alphabetTab[$i];
+        $column = $alphabetTab[$j];
+        $vigenere[$line][$column] = $doubleAlphaTab[$i + $j];
+    }
+}
 
-var_dump($tab);
+// encode message
+$message = "APPRENDRE PHP EST UNE CHOSE FORMIDABLE";
+$key = "BACKEND";
+$messageTab = str_split($message);
+$keyTab = str_split($key);
+$keySize = count($keyTab);
+
+$keyCounter = 0;
+foreach ($messageTab as $pointer => $letterToEncode) {
+    $positionKeyLetter = $keyCounter % $keySize;
+    $keyLetter = $keyTab[$positionKeyLetter];
+    if ($letterToEncode != " ") {
+        $encodedMessage[] = $vigenere[$letterToEncode][$keyLetter];
+    } else {
+        $encodedMessage[] = " ";
+    }
+    $keyCounter++;
+}
+
+$cryptedMessage = implode($encodedMessage);
+
+// decode message
+$encodedMessage = "TWA PEE WM TESLH WL LSLVNMRJ";
+$key4decode = "VIGENERE";
+$encodedMessageTab = str_split($encodedMessage);
+$key4decodeTab = str_split($key4decode);
+$key4decodeSize = count($key4decodeTab);
+
+$keyCounter = 0;
+foreach ($encodedMessageTab as $pointer => $letterToDecode) {
+    $positionKeyLetter = $keyCounter % $key4decodeSize;
+    $keyLetter = $key4decodeTab[$positionKeyLetter];
+    if ($letterToDecode != " ") {
+        for ($i = 0; $i < $sizeAlphabet; $i++) {
+            $lineToDecode = $alphabetTab[$i];
+            if ($vigenere[$lineToDecode][$keyLetter] == $letterToDecode) {
+                $decryptedMessage[] = $lineToDecode;
+            }
+        }
+    } else {
+        $decryptedMessage[] = " ";
+    }
+    $keyCounter++;
+}
+
+$decodedMessage = implode($decryptedMessage);
 
 ?>
+
+
 
 
 
