@@ -41,8 +41,28 @@ for ($i = 0; $i < $sizeAlphabet; $i++) {
     }
 }
 
-var_dump($vigenere);
+// encode message
+$message = "APPRENDRE PHP EST UNE CHOSE FORMIDABLE";
+$key = "BACKEND";
+$messageTab = str_split($message);
+$keyTab = str_split($key);
+$keySize = count($keyTab);
 
+$encodedMessage = [];
+$keyCounter = 0;
+foreach ($messageTab as $pointer => $letterToEncode) {
+    $positionKeyLetter = $keyCounter % $keySize;
+    $keyLetter = $keyTab[$positionKeyLetter];
+    if ($letterToEncode != " ") {
+        $encodedMessage[] = $vigenere[$letterToEncode][$keyLetter];
+    } else {
+        $encodedMessage[] = " ";
+    }
+    $keyCounter++;
+}
+
+$cryptedMessage = implode($encodedMessage);
+var_dump($cryptedMessage);
 ?>
 
 
