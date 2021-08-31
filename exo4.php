@@ -45,7 +45,6 @@
         $keyTab = str_split($key);
         $keySize = count($keyTab);
 
-        $encodedMessage = [];
         $keyCounter = 0;
         foreach ($messageTab as $pointer => $letterToEncode) {
             $positionKeyLetter = $keyCounter % $keySize;
@@ -67,10 +66,31 @@
 
         <h5>3- decoder le message "TWA PEE WM TESLH WL LSLVNMRJ" avec la clé "VIGENERE"</h5>
         <?php
+        // decode message
         $encodedMessage = "TWA PEE WM TESLH WL LSLVNMRJ";
         $key4decode = "VIGENERE";
-        // TO DO
-        $decodedMessage = $encodedMessage;
+        $encodedMessageTab = str_split($encodedMessage);
+        $key4decodeTab = str_split($key4decode);
+        $key4decodeSize = count($key4decodeTab);
+
+        $keyCounter = 0;
+        foreach ($encodedMessageTab as $pointer => $letterToDecode) {
+            $positionKeyLetter = $keyCounter % $key4decodeSize;
+            $keyLetter = $key4decodeTab[$positionKeyLetter];
+            if ($letterToDecode != " ") {
+                for ($i = 0; $i < $sizeAlphabet; $i++) {
+                    $lineToDecode = $alphabetTab[$i];
+                    if ($vigenere[$lineToDecode][$keyLetter] == $letterToDecode) {
+                        $decryptedMessage[] = $lineToDecode;
+                    }
+                }
+            } else {
+                $decryptedMessage[] = " ";
+            }
+            $keyCounter++;
+        }
+
+        $decodedMessage = implode($decryptedMessage);
         ?>
         <p>le message chiffré est: <?php echo $encodedMessage; ?></p>
         <p>la clé est: <?php echo $key4decode ?></p>
