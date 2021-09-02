@@ -16,6 +16,13 @@
     <?php include("./partial/_navBar.php"); ?>
     <div class="container">
         <h1>Le site de Jeff Nys</h1>
+
+        <h3>les liens des différents sites</h3>
+        <ul>
+            <li><a href="https://arthurweb.yj.lu/public/">Arthur G.</a></li>
+            <li><a href="https://php.bdelanls.fr/">Bertrand D.</a></li>
+        </ul>
+
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
