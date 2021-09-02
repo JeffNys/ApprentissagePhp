@@ -23,6 +23,7 @@
             <li><a href="/exo3.php">exercice 3</a>: travailler avec des tableaux</li>
             <li><a href="/exo4.php">exercice 4</a>: travailler avec des boucles</li>
             <li><a href="/exo5.php">exercice 5</a>: les formulaires</li>
+            <li><a href="/exo6.php">Exercice 6</a>: les boucles while</li>
         </ol>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
