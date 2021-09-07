@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('./script/functions.php');
 $data = openDB();
 if (!empty($_POST)) {
