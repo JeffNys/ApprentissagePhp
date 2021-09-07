@@ -22,7 +22,16 @@
                     <a class="nav-link" href="/notes.php">notes</a>
                 </li>
                 <li class="nav-item active">
+                    <a class="nav-link" href="/admin.php">admin</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-secondary text-dark" href="/deconnexion.php">deconnexion</a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" href="/inscription.php">inscription</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-success" href="/connexion.php">connexion</a>
                 </li>
             </ul>
         </div>
