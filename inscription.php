@@ -3,14 +3,14 @@ session_start();
 include('./script/functions.php');
 
 if (!empty($_POST)) {
-    $securizedDataFromForm = treatFormData(
+    $securePost = treatFormData(
         $_POST,
         "name",
         "firstName",
         "email",
         "password",
     );
-    extract($securizedDataFromForm, EXTR_OVERWRITE);
+    extract($securePost, EXTR_OVERWRITE);
 
     $data = openDB();
 
@@ -26,8 +26,6 @@ if (!empty($_POST)) {
     writeDB($data);
     header("Location: /connexion.php");
 }
-
-
 ?>
 <!doctype html>
 <html lang="fr">
@@ -59,7 +57,7 @@ if (!empty($_POST)) {
             </div>
             <div class="form-group">
                 <label class="col-form-label" for="email">Courriel : </label>
-                <input type="text" class="form-control border border-3" name="email">
+                <input type="email" class="form-control border border-3" name="email">
             </div>
             <div class="form-group">
                 <label class="col-form-label" for="password">Mot de passe : </label>

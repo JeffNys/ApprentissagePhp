@@ -10,7 +10,7 @@
             "email": "contact@fafache.net",
             "name": "Nys",
             "firstName": "Jeff",
-            "password": "$argon2id$v=19$m=65536,t=4,p=1$RlBYZGZLYVFidlhzMGhuYQ$lLE5PVVyY4BSULwFzE8IxzbkhB0Ti+JNZbujzfAHQRY",
+            "password": "$argon2id$v=19$m=65536,t=4,p=1$LnN6WVJIdkVPVkFPbEMzVA$Bp27U+vpMl\/v9HBYeP1mWo5WLvD2ZFN8T1Xtqm4qfzw",
             "role": [
                 "ROLE_USER",
                 "ROLE_ADMIN"
@@ -18,9 +18,9 @@
         },
         {
             "email": "bozo@fafache.net",
-            "name": "Leclow",
+            "name": "Leclown",
             "firstName": "Bozo",
-            "password": "$argon2id$v=19$m=65536,t=4,p=1$eTF6N0lmajVBeEhyV0o2Mg$xQZpJghRoyBT7ftlYUHdJ+zHEJHvGUpqmWGWP6E9W+I",
+            "password": "$argon2id$v=19$m=65536,t=4,p=1$REN6NEN5STJ3blNnRkppQQ$72QkAZaQhdM\/h+94YZEo2UPbSdcdsV+cSfrAH82C8Ro",
             "role": [
                 "ROLE_USER"
             ]

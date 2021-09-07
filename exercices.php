@@ -29,6 +29,7 @@ include('./script/functions.php');
             <li><a href="/exo5.php">exercice 5</a>: les formulaires</li>
             <li><a href="/exo6.php">Exercice 6</a>: les boucles while</li>
             <li><a href="/exo7.php">Exercice 7</a>: nettoyage du code par les fonctions</li>
+            <li><a href="/note.php">Exercice 8</a>: base de données json, voir page des notes</li>
         </ol>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>

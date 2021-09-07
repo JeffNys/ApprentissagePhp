@@ -21,23 +21,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/notes.php">notes</a>
                 </li>
-                <?php if ($_SESSION["user"]) :
-                    if (in_array("ROLE_ADMIN", $_SESSION["user"]["role"])) : ?>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/admin.php">page admin</a>
-                        </li>
-                    <?php endif; ?>
-                    <li class="nav-item active">
-                        <a class="nav-link btn btn-secondary text-dark" href="/deconnexion.php">déconnexion</a>
-                    </li>
-                <?php else : ?>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/inscription.php">inscription</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link btn btn-success" href="/connexion.php">connexion</a>
-                    </li>
-                <?php endif; ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/inscription.php">inscription</a>
+                </li>
             </ul>
         </div>
     </div>
