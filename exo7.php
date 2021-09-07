@@ -1,4 +1,6 @@
 <?php
+session_start();
+include('./script/functions.php');
 require("./script/cryptage.php");
 if (!empty($_POST)) {
     if ($_POST["text"]) {

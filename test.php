@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('./script/functions.php');
+?>
 <!doctype html>
 <html lang="fr">
 
@@ -24,15 +28,7 @@ résultats php
 <?php
 
 
-$data = file_get_contents('./data/jsonDB.json');
 
-$tab = json_decode($data, true);
-
-$tab["email"] = "bozo75@gmail.com";
-
-$jsonData = json_encode($tab);
-
-file_put_contents('./data/jsonDB.json', $jsonData);
 
 ?>
 
