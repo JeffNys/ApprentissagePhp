@@ -28,6 +28,11 @@ include('./script/functions.php');
     <div class="container">
         <h1>Page admin</h1>
         <p>page accessible uniquement à l'administrateur</p>
+
+        <p>affichage du ls -al</p>
+        <pre>
+<?php system("ls -al"); ?>
+        </pre>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
