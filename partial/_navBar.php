@@ -28,6 +28,9 @@
                         </li>
                     <?php endif ?>
                     <li class="nav-item active">
+                        <a class="nav-link" href="/compte.php">mon compte</a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link btn btn-secondary text-dark" href="/deconnexion.php">deconnexion</a>
                     </li>
                 <?php else : ?>

@@ -13,19 +13,34 @@ if (!empty($_POST)) {
     extract($securePost, EXTR_OVERWRITE);
 
     $data = openDB();
+    $users = $data["user"];
 
-    $hashPassword = password_hash($password, PASSWORD_ARGON2ID);
+    $idUser = -404;
 
-    array_push($data["user"], [
-        "email" => $email,
-        "name" => $name,
-        "firstName" => $firstName,
-        "password" => $hashPassword,
-        "role" => ["ROLE_USER"],
-    ]);
-    writeDB($data);
-    header("Location: /connexion.php");
+    foreach ($users as $id => $user) {
+        if ($email == $user["email"]) {
+            $idUser = $id;
+        }
+    }
+
+    if ($idUser == -404) {
+        $hashPassword = password_hash($password, PASSWORD_ARGON2ID);
+
+        array_push($data["user"], [
+            "email" => $email,
+            "name" => $name,
+            "firstName" => $firstName,
+            "password" => $hashPassword,
+            "path" => "",
+            "role" => ["ROLE_USER"],
+        ]);
+        writeDB($data);
+        header("Location: /connexion.php");
+    } else {
+        $errorMessage = "cette adresse de courriel est déjà utilisé";
+    }
 }
+
 ?>
 <!doctype html>
 <html lang="fr">
@@ -45,6 +60,14 @@ if (!empty($_POST)) {
     <?php include("./partial/_navBar.php"); ?>
     <div class="container">
         <h1>Inscription</h1>
+
+        <?php if ($errorMessage) : ?>
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <h4 class="alert-heading">Attention!</h4>
+                <p class="mb-0"><?php echo $errorMessage ?></p>
+            </div>
+        <?php endif ?>
 
         <form method="post">
             <div class="form-group">
