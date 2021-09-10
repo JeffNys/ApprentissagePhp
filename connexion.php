@@ -21,6 +21,7 @@ if (!empty($_POST)) {
                     "firstName" => $user["firstName"],
                     "email" => $user["email"],
                     "role" => $user["role"],
+                    "path" => $user["path"],
                 ];
                 header("Location: /");
             }
@@ -65,7 +66,7 @@ if (!empty($_POST)) {
                 <label class="col-form-label" for="password">Mot de passe : </label>
                 <input type="password" class="form-control border border-3" name="password">
             </div>
-            <input class="btn btn-primary mb-4 mt-3" type="submit" value="S'inscrire">
+            <input class="btn btn-primary mb-4 mt-3" type="submit" value="Se connecter">
         </form>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
